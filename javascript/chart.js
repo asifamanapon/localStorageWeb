@@ -20,6 +20,10 @@ const addProduct = () => {
 const getShoppingCartFromFromLocalStorage = () => {
 
     let savedCart = localStorage.getItem('cart');
-    let
+    let cart = {};
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+    }
+    return cart;
     
 }

@@ -27,3 +27,17 @@ const getShoppingCartFromFromLocalStorage = () => {
     return cart;
     
 }
+
+const saveItemToLocalStorage = (product, quantity) => {
+    const cart = getShoppingCartFromFromLocalStorage();
+
+    //add product to the object as property
+
+    cart[product] = quantity;
+    const cartStringified = JSON.stringify(cart);
+
+    //save to local storage
+
+    localStorage.setItem('cart', cartStringified);
+    
+}

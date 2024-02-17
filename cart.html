@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Shopping Chart</title>
+    <title>Shopping Cart</title>
 </head>
+
 <body>
     <input id="product-name-field" type="text" placeholder="Product Name">
-    <input id="product-quantity-field" type="text" placeholder ="Quantity">
-    <button onclick="addProduct()" id="btn-add-product">Add Product</button>
+    <input id="product-quantity-field" type="text" placeholder="Quantity">
+    <button id="btn-add-product">Add Product</button>
     <br>
-    <ul id="product-container">
-
-    </ul>
+    <span id="total-items"></span> <!-- Total items count will be displayed here -->
+    <ul id="product-container"></ul>
     <script src="javascript/chart.js"></script>
+    <script>
+        // Attach event listener to the button
+        document.getElementById('btn-add-product').addEventListener('click', addProduct);
 
-    
+        // Display stored products and total items count when the page loads
+        displayStoredProducts();
+    </script>
 </body>
+
 </html>
